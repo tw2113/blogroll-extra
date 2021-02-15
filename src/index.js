@@ -19,7 +19,19 @@ export default registerBlockType( 'tw2113/blogroll-extra', {
 		'blogroll-extra'
 	),
 	attributes: {
+		orderby: {
+			type: 'string',
+		},
 		order: {
+			type: 'string',
+		},
+		limit: {
+			type: 'number',
+		},
+		category: {
+			type: 'string',
+		},
+		category_name: {
 			type: 'string',
 		},
 		hide_invisible: {
@@ -33,6 +45,30 @@ export default registerBlockType( 'tw2113/blogroll-extra', {
 		},
 		show_description: {
 			type: 'boolean',
+		},
+		title_li: {
+			type: 'string',
+		},
+		title_before: {
+			type: 'string',
+		},
+		title_after: {
+			type: 'string',
+		},
+		class: {
+			type: 'string',
+		},
+		category_before: {
+			type: 'string',
+		},
+		category_after: {
+			type: 'string',
+		},
+		category_orderby: {
+			type: 'string',
+		},
+		category_order: {
+			type: 'string',
 		},
 	},
 	category: 'widgets',

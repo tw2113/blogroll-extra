@@ -46,12 +46,7 @@ export default function Edit( props ) {
 	return (
 		<div {...useBlockProps()}>
 			{ (
-				<ServerSideRender
-					block={ "tw2113/blogroll-extra" }
-					attributes={ {
-						order: order
-					} }
-					/>
+				<Placeholder icon={ 'book' } label="Placeholder" />
 			) }
 			<InspectorControls>
 				<PanelBody
