@@ -8,7 +8,7 @@
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:     blogroll-extra
  *
- * @package         create-block
+ * @package         tw2113-blogroll-extra
  */
 namespace tw2113;
 
@@ -55,20 +55,89 @@ function blogroll_extra_block_init() {
 			'style'         => 'tw2113-blogroll-extra-block',
 			'render_callback' => __NAMESPACE__ . '\construct_bookmarks_list',
 			'attributes' => [
+				'orderby' => [
+					'type' => 'string',
+					'default' => 'name',
+				],
 				'order' => [
-					'default' => 'ASC'
-				]
-			]
+					'type' => 'string',
+					'default' => 'ASC',
+				],
+				'limit' => [
+					'type' => 'integer',
+					'default' => -1,
+				],
+				'category' => [
+					'type' => 'string',
+				],
+				'category_name' => [
+					'type' => 'string',
+				],
+				'hide_invisible' => [
+					'type' => 'boolean',
+					'default' => true,
+				],
+				'show_updated' => [
+					'type' => 'boolean',
+					'default' => false,
+				],
+				'categorize' => [
+					'type' => 'boolean',
+					'default' => true,
+				],
+				'show_description' => [
+					'type' => 'boolean',
+					'default' => false,
+				],
+				'title_li' => [
+					'type' => 'string',
+					'default' => 'Bookmarks',
+				],
+				'title_before' => [
+					'type' => 'string',
+					'default' => '<h2>',
+				],
+				'title_after' => [
+					'type' => 'string',
+					'default' => '</h2>',
+				],
+				'class' => [
+					'type' => 'string',
+					'default' => 'linkcat',
+				],
+				'category_before' => [
+					'type' => 'string',
+					'default' => '<li id="%id" class="%class">',
+				],
+				'category_after' => [
+					'type' => 'string',
+					'default' => '</li>',
+				],
+				'category_orderby' => [
+					'type' => 'string',
+					'default' => 'name',
+				],
+				'category_order' => [
+					'type' => 'string',
+					'default' => 'ASC',
+				],
+			],
 		]
 	);
 }
 add_action( 'init', __NAMESPACE__ . '\blogroll_extra_block_init' );
 
 function construct_bookmarks_list( $attributes ) {
+	$args = [];
+	$args = [
+		'echo' => false,
+	];
+	$attributes = array_filter( $attributes );
+	foreach ( $attributes as $attribute => $attribute_value ) {
+		$args[ $attribute ] = $attribute_value;
+	}
+
 	return wp_list_bookmarks(
-		[
-			'order' => $attributes['order'],
-			'echo' => false,
-		]
+		$args
 	);
 }
