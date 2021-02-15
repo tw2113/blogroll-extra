@@ -8,7 +8,7 @@ import Edit from './edit';
  *
  * @see https://developer.wordpress.org/block-editor/developers/block-api/#registering-a-block
  */
-export default registerBlockType( 'create-block/blogroll-extra', {
+export default registerBlockType( 'tw2113/blogroll-extra', {
 	/**
 	 * @see https://make.wordpress.org/core/2020/11/18/block-api-version-2/
 	 */
