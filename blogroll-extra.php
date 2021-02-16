@@ -101,7 +101,7 @@ function blogroll_extra_block_init() {
 					'type' => 'string',
 					'default' => '</h2>',
 				],
-				'class' => [
+				'roll_class' => [
 					'type' => 'string',
 					'default' => 'linkcat',
 				],
@@ -134,7 +134,12 @@ function construct_bookmarks_list( $attributes ) {
 	];
 	$attributes = array_filter( $attributes );
 	foreach ( $attributes as $attribute => $attribute_value ) {
-		$args[ $attribute ] = $attribute_value;
+		// need to handle custom because `class` is a reserved keyword in js
+		if ( 'roll_class' === $attribute ) {
+			$args['class'] = $attribute_value;
+		} else {
+			$args[ $attribute ] = $attribute_value;
+		}
 	}
 
 	return wp_list_bookmarks(
