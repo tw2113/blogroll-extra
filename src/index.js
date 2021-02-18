@@ -25,8 +25,8 @@ export default registerBlockType( 'tw2113/blogroll-extra', {
 		order: {
 			type: 'string',
 		},
-		limit: {
-			type: 'number',
+		roll_limit: {
+			type: 'string',
 		},
 		category: {
 			type: 'string',
@@ -55,7 +55,7 @@ export default registerBlockType( 'tw2113/blogroll-extra', {
 		title_after: {
 			type: 'string',
 		},
-		class: {
+		roll_class: {
 			type: 'string',
 		},
 		category_before: {

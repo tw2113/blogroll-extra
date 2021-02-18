@@ -20,7 +20,7 @@ export default function Edit( props ) {
 		attributes: {
 			orderby,
 			order,
-			limit,
+			roll_limit,
 			category,
 			category_name,
 			hide_invisible,
@@ -113,8 +113,8 @@ export default function Edit( props ) {
 					<TextControl
 						label="Limit"
 						help="Amount of bookmarks to display. Accepts 1+ or -1 for all."
-						value={ limit }
-						onChange={ limit => setAttributes({limit})}
+						value={ roll_limit }
+						onChange={ roll_limit => setAttributes({roll_limit})}
 					/>
 
 					<TextControl

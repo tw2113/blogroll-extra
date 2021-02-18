@@ -63,9 +63,9 @@ function blogroll_extra_block_init() {
 					'type' => 'string',
 					'default' => 'ASC',
 				],
-				'limit' => [
-					'type' => 'integer',
-					'default' => -1,
+				'roll_limit' => [
+					'type' => 'string',
+					'default' => '-1',
 				],
 				'category' => [
 					'type' => 'string',
@@ -137,6 +137,9 @@ function construct_bookmarks_list( $attributes ) {
 		// need to handle custom because `class` is a reserved keyword in js
 		if ( 'roll_class' === $attribute ) {
 			$args['class'] = $attribute_value;
+		} else if ( 'roll_limit' === $attribute ) {
+			// need to handle cause `limit` alone fails to work for me.
+			$args['limit'] = $attribute_value;
 		} else {
 			$args[ $attribute ] = $attribute_value;
 		}
