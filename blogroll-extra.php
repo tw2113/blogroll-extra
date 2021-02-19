@@ -132,7 +132,7 @@ function construct_bookmarks_list( $attributes ) {
 	$args = [
 		'echo' => false,
 	];
-	$attributes = array_filter( $attributes );
+
 	foreach ( $attributes as $attribute => $attribute_value ) {
 		// need to handle custom because `class` is a reserved keyword in js
 		if ( 'roll_class' === $attribute ) {
