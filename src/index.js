@@ -36,12 +36,14 @@ export default registerBlockType( 'tw2113/blogroll-extra', {
 		},
 		hide_invisible: {
 			type: 'boolean',
+			default: true,
 		},
 		show_updated: {
 			type: 'boolean',
 		},
 		categorize: {
 			type: 'boolean',
+			default: true,
 		},
 		show_description: {
 			type: 'boolean',
