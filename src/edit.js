@@ -58,7 +58,8 @@ export default function Edit( props ) {
 	return (
 		<div {...useBlockProps()}>
 			{ (
-				<Placeholder icon={ 'book' } label="Placeholder" />
+				<Placeholder icon={ 'book' } label="WordPress Developer Reference" instructions="https://developer.wordpress.org/reference/functions/wp_list_bookmarks/" />
+
 			) }
 			<InspectorControls>
 				<PanelBody
